@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>High & Low</title>
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+        <header class="header">
+
+            <a href="login.html" class="login">Login</a>
+
+            <!-- ハンバーガーボタン -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- メニュー -->
+            <nav class="menu" id="menu">
+
+                <a href="index.html">Home</a>
+
+                <a href="doubleup.html">ダブルアップ</a>
+
+                <a href="ranking.html">ランキング</a>
+
+            </nav>
+
+        </header>
+
+        <main class="game">
+
+            <h1>High & Low</h1>
+
+            <div class="status">
+                <h2><span id="win">0</span>　連勝中！</h2>
+                <h3>残り枚数：<span id="remain">52</span></h3>
+
+                <h2 id="result"></h2>
+            </div>
+
+
+            <div class="cards">
+
+                <!-- 現在のカード -->
+                <div class="card">
+                    <img id="currentCard" src="image/back.jpg" alt="現在のカード">
+                </div>
+
+                <!-- 次のカード（裏面） -->
+                <div class="card">
+                    <img id="nextCard" src="image/back.jpg" alt="次のカード">
+                </div>
+
+            </div>
+
+            <div class="buttons">
+                <p1><button id="high">HIGH</button></p1>
+                <p2><button id="low">LOW</button></p2>
+            </div>
+
+            <button id="reset">最初から</button>
+
+
+            <div id="gameOverScreen" class="overlay">
+
+                <div class="overlay-box">
+
+                    <h2 id="overlayResult"></h2>
+
+                    <h3>今回の勝利数　<span id="overlayWin">0</span></h3>
+
+                    <button id="retry">もう一度</button>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        <script src="js/header.js"></script>
+        <script src="js/high&low.js"></script>
+
+
+    </body>
+</html>

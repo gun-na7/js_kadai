@@ -1,0 +1,249 @@
+body {
+    background-color: green;
+    width: 100vw;
+    height: 100vh;
+}
+
+.title {
+    text-align: center;
+    align-items: center;
+}
+
+/* header */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    background:#222;
+}
+
+.header a{
+    color:white;
+    text-decoration:none;
+}
+
+.hamburger{
+
+    width:40px;
+    height:30px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    z-index:1001;
+
+}
+
+.hamburger span{
+
+    position:absolute;
+
+    width:100%;
+    height:4px;
+
+    background:white;
+
+    border-radius:5px;
+
+    transition:0.4s;
+
+}
+
+/* 1本目 */
+.hamburger span:nth-child(1){
+
+    top:0;
+
+}
+
+/* 2本目 */
+.hamburger span:nth-child(2){
+
+    top:13px;
+
+}
+
+/* 3本目 */
+.hamburger span:nth-child(3){
+
+    top:26px;
+
+}
+
+.menu{
+    position:fixed;
+    top:0;
+    right:-250px;
+    width:250px;
+    height:100%;
+    background:#333;
+    display:flex;
+    flex-direction:column;
+    padding-top:80px;
+    transition:0.3s;
+    z-index:1000;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    padding:18px 20px;
+    font-size:20px;
+    border-bottom:1px solid #555;
+}
+
+.menu a:hover{
+    background:#555;
+}
+
+.menu.open{
+    right:0;
+}
+
+/* 開いた状態 */
+
+.hamburger.open span:nth-child(1){
+
+    transform:rotate(45deg);
+
+    top:13px;
+
+}
+
+.hamburger.open span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.hamburger.open span:nth-child(3){
+
+    transform:rotate(-45deg);
+
+    top:13px;
+
+}
+
+/* ダブルアップ */
+#poker_cards{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:30px;
+}
+
+.poker_card{
+    width:150px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.selected{
+    transform:translateY(-20px);
+    border:4px solid red;
+}
+
+/* high&low */
+.game{
+    text-align:center;
+    margin-top:40px;
+}
+
+
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    margin:30px 0;
+    position:relative;
+}
+
+.card {
+    width: 180px;
+    height: 250px;
+    position: relative;
+}
+
+.deck {
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    transition: transform 0.8s ease;
+    backface-visibility: hidden;
+}
+
+.flip{
+    transform:rotateY(90deg);
+}
+
+.win {
+    color: red;
+    font-weight: bold;
+}
+
+.lose {
+    color: blue;
+    font-weight: bold;
+}
+
+.draw {
+    color: gray;
+    font-weight: bold;
+}
+
+.moveLeft {
+    transform: translateX(-230px);
+}
+
+.buttons button{
+    width:120px;
+    height:50px;
+    margin:10px;
+    font-size:20px;
+}
+
+.buttons p1 {
+    color: red;
+}
+
+.buttons p2 {
+    color: blue;
+}
+
+.overlay{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+
+    justify-content:center;
+    align-items:center;
+}
+
+.overlay-box{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    min-width:300px;
+}
+
+.overlay-box h2{
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+#retry{
+    width:180px;
+    height:60px;
+    font-size:24px;
+    cursor:pointer;
+}
