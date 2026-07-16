@@ -76,27 +76,24 @@ function startGame(){
 // カード表示
 function showCards(){
 
-    const cards=document.getElementById("cards");
+    const cards = document.getElementById("poker_cards");
 
-    poker_cards.innerHTML="";
+    cards.innerHTML = "";
 
-    hand.forEach((poker_card,index)=>{
+    hand.forEach((card,index)=>{
 
-        const img=document.createElement("img");
+        const img = document.createElement("img");
 
-        img.src=poker_card.image;
+        img.src = card.image;
+        img.className = "poker_card";
 
-        img.className="poker_card";
+        img.onclick = function(){
 
-        img.dataset.index=index;
-
-        img.onclick=function(){
-
-            if(exchanged)return;
+            if(exchanged) return;
 
             img.classList.toggle("selected");
 
-        }
+        };
 
         cards.appendChild(img);
 
@@ -107,21 +104,21 @@ function showCards(){
 // カード交換
 function exchangeCards(){
 
-    if(exchanged)return;
+    if(exchanged) return;
 
-    const imgs=document.querySelectorAll(".card");
+    const imgs = document.querySelectorAll(".poker_card");
 
     imgs.forEach((img,index)=>{
 
         if(img.classList.contains("selected")){
 
-            hand[index]=drawCard();
+            hand[index] = drawCard();
 
         }
 
     });
 
-    exchanged=true;
+    exchanged = true;
 
     showCards();
 
